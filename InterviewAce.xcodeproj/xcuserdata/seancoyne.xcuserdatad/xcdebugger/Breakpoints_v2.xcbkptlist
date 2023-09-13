@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6580492E-6674-48CB-BD9A-CAFAB92DF733"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E682228C-0BAC-4874-9399-BECBC3438BD8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InterviewAce/Boot/BootUtils.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "SeedInitialData(container:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "E682228C-0BAC-4874-9399-BECBC3438BD8 - 796155b159e986eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InterviewAce.SeedInitialData(container: __C.NSPersistentContainer) -&gt; ()"
+                  moduleName = "InterviewAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seancoyne/Documents/Repos/InterviewAce/InterviewAce/Boot/BootUtils.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "1420">
+               </Location>
+               <Location
+                  uuid = "E682228C-0BAC-4874-9399-BECBC3438BD8 - 796155b159e99ac9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InterviewAce.SeedInitialData(container: __C.NSPersistentContainer) -&gt; ()"
+                  moduleName = "InterviewAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seancoyne/Documents/Repos/InterviewAce/InterviewAce/Boot/BootUtils.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "1488">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
