@@ -8,7 +8,7 @@ final class InterviewAceTests: XCTestCase {
     
     func makeTestContainer() -> NSPersistentContainer {
         let container: NSPersistentContainer
-        container = NSPersistentContainer(name: "CrackingTheDataEngineeringInterview")
+        container = NSPersistentContainer(name: "InterviewAce")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

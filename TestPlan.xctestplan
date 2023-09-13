@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "25EBE8E8-AC5B-46C1-BB80-A3660A1075D1",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:InterviewAce.xcodeproj",
+        "identifier" : "42AAE79C2AB1742D00D6E27E",
+        "name" : "InterviewAceTests"
+      }
+    }
+  ],
+  "version" : 1
+}
