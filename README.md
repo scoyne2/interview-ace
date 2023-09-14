@@ -7,7 +7,7 @@ The Interview Ace does not capture or share any data or user information.
 Contact Sean at scoyne@seancoyne.org
 
 
-# Download in the iOS App Store: COMING SOON!
+## [Download in the iOS App Store](https://apps.apple.com/app/interview-ace/id6465748534)
 Ace the Data Engineering Interview in 30 Days. In just 1 hour per day build the necessary skills to be an interview ace. Stay on track with your preparation in order to ace the data engineering interview! Daily tasks help you build the right skills, and keep the right pace. Track your progress through daily streaks and time invested.
 
 ## Preview
