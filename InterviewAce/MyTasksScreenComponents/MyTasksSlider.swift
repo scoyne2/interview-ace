@@ -29,7 +29,7 @@ struct MyTasksSlider: View {
         
         calculateStreak(task: task, currentProgress: currentProgress, streakTrackerEntity: streakTrackerEntity)
         
-        currentProgress.overallProgress = (Double(currentProgress.completedTasks) / Double(currentProgress.totalTasks))/100.00
+        currentProgress.overallProgress = (Double(currentProgress.completedTasks) / Double(currentProgress.totalTasks))
         
         task.isCompleted.toggle()
         
