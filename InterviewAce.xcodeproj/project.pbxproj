@@ -27,6 +27,7 @@
 		422941B82AB1564400F8DEF2 /* DailyActivityEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422941B62AB1564400F8DEF2 /* DailyActivityEntity+CoreDataClass.swift */; };
 		422941BB2AB1595A00F8DEF2 /* StreakTrackerEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422941B92AB1595A00F8DEF2 /* StreakTrackerEntity+CoreDataClass.swift */; };
 		422941BC2AB1595A00F8DEF2 /* StreakTrackerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422941BA2AB1595A00F8DEF2 /* StreakTrackerEntity+CoreDataProperties.swift */; };
+		4267FC6D2ABCB19700A3EAB3 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4267FC6C2ABCB19700A3EAB3 /* LICENSE.txt */; };
 		42AAE7A92AB174EF00D6E27E /* InterviewAceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AAE7A82AB174EF00D6E27E /* InterviewAceTests.swift */; };
 		42CBC5122AB151B2001D19F9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CBC5112AB151B2001D19F9 /* Persistence.swift */; };
 		42CBC5152AB1521D001D19F9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CBC5142AB1521D001D19F9 /* Colors.swift */; };
@@ -75,6 +76,7 @@
 		422941B92AB1595A00F8DEF2 /* StreakTrackerEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StreakTrackerEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		422941BA2AB1595A00F8DEF2 /* StreakTrackerEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StreakTrackerEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		422941BD2AB165B500F8DEF2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4267FC6C2ABCB19700A3EAB3 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		42AAE79D2AB1742D00D6E27E /* InterviewAceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterviewAceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AAE7A82AB174EF00D6E27E /* InterviewAceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAceTests.swift; sourceTree = "<group>"; };
 		42AAE7AB2AB1752B00D6E27E /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		42F8EBFF2AB14DEE00E74AB5 = {
 			isa = PBXGroup;
 			children = (
+				4267FC6C2ABCB19700A3EAB3 /* LICENSE.txt */,
 				42AAE7AB2AB1752B00D6E27E /* TestPlan.xctestplan */,
 				422941BD2AB165B500F8DEF2 /* README.md */,
 				422941B62AB1564400F8DEF2 /* DailyActivityEntity+CoreDataClass.swift */,
@@ -330,6 +333,7 @@
 				422941A22AB1538B00F8DEF2 /* Preview Assets.xcassets in Resources */,
 				42F8EC272AB14E2800E74AB5 /* appicon.png in Resources */,
 				42F8EC262AB14E2800E74AB5 /* tasks.json in Resources */,
+				4267FC6D2ABCB19700A3EAB3 /* LICENSE.txt in Resources */,
 				42F8EC252AB14E2800E74AB5 /* tutorial1.png in Resources */,
 				42F8EC3B2AB14E8400E74AB5 /* Media.xcassets in Resources */,
 				42F8EC292AB14E2800E74AB5 /* tutorial2.png in Resources */,
@@ -571,11 +575,12 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = InterviewAce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -605,11 +610,12 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = InterviewAce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
