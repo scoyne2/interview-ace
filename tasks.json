@@ -422,7 +422,7 @@
     "dayScheduled": 20,
     "taskType": "system-design",
     "taskTitle": "Explain a System",
-    "taskDescription": "Create a flowchart of a system or datapipeline\nyou have built. Practice out loud..",
+    "taskDescription": "Create a flowchart of a system or datapipeline\nyou have built. Practice out loud.",
     "estimatedTime": 30,
     "taskId": 39,
     "isCompleted": false,
