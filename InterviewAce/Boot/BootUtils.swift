@@ -14,6 +14,19 @@ struct TaskEntityJSONRepresentation: Codable {
     var dayScheduled: Int32
 }
 
+func fetchAllTasks(container: NSPersistentContainer) -> [TaskEntity] {
+    let context = container.viewContext
+    let fetchRequest: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
+
+    // Execute the fetch request
+    do {
+        let tasks = try context.fetch(fetchRequest)
+        return tasks
+    } catch {
+        print("Error fetching tasks on fetchAllTasks(): \(error)")
+        return []
+    }
+}
 
 func fetchTasksScheduledForDay(container: NSPersistentContainer, day: Int32) -> [TaskEntity] {
     let context = container.viewContext
@@ -53,6 +66,9 @@ func PrepareTodaysTasks(container: NSPersistentContainer) -> Void{
         userProfile.currentDay = day
         let todaysTasks = fetchTasksScheduledForDay(container: container, day: day)
         userProfile.todaysItems = NSSet(array: todaysTasks)
+        
+        let allTasks = fetchAllTasks(container: container)
+        userProfile.allItems = NSSet(array: allTasks)
 
         try context.save()
     } catch {

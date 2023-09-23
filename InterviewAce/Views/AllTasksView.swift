@@ -1,7 +1,7 @@
 import SwiftUI
 
 
-struct MyTasksView: View {
+struct AllTasksView: View {
     @State private var showMenu = false
     let heightMultiplier: CGFloat
     let widthMultiplier: CGFloat
@@ -26,7 +26,7 @@ struct MyTasksView: View {
                     
                     Spacer()
                     
-                    Text("Today's Tasks")
+                    Text("All Tasks")
                         .font(Font.custom("Poppins", size: 20).weight(.bold))
                         .foregroundColor(.white)
                     
@@ -37,7 +37,7 @@ struct MyTasksView: View {
                 Spacer()
                 
                 // Cards Slider
-                MyTasksSlider(heightMultiplier: heightMultiplier, widthMultiplier:widthMultiplier, currentProgress: currentProgress, streakTrackerEntity: streakTrackerEntity).environment(\.managedObjectContext, viewContext)
+                AllTasksSlider(heightMultiplier: heightMultiplier, widthMultiplier:widthMultiplier, currentProgress: currentProgress, streakTrackerEntity: streakTrackerEntity).environment(\.managedObjectContext, viewContext)
             }
         } .navigationBarBackButtonHidden(true)
     }

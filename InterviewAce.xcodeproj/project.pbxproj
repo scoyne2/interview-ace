@@ -12,7 +12,6 @@
 		422941962AB152FA00F8DEF2 /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422941912AB152FA00F8DEF2 /* Streak.swift */; };
 		422941972AB152FA00F8DEF2 /* AppBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422941922AB152FA00F8DEF2 /* AppBanner.swift */; };
 		422941982AB152FA00F8DEF2 /* TimeSpent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422941932AB152FA00F8DEF2 /* TimeSpent.swift */; };
-		4229419D2AB1534700F8DEF2 /* MyTasksHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229419B2AB1534700F8DEF2 /* MyTasksHeader.swift */; };
 		4229419E2AB1534700F8DEF2 /* MyTasksSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229419C2AB1534700F8DEF2 /* MyTasksSlider.swift */; };
 		422941A22AB1538B00F8DEF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422941A12AB1538B00F8DEF2 /* Preview Assets.xcassets */; };
 		422941A62AB1539D00F8DEF2 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422941A42AB1539D00F8DEF2 /* HomeScreenView.swift */; };
@@ -32,6 +31,8 @@
 		4278313E2ABE2221001F845F /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4278313D2ABE2221001F845F /* SideMenuView.swift */; };
 		427831412ABE2FB3001F845F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 427831402ABE2FB3001F845F /* logo.png */; };
 		427831432ABE583D001F845F /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427831422ABE583D001F845F /* ResourcesView.swift */; };
+		42875C7B2ABF9DA300F53B86 /* AllTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42875C7A2ABF9DA300F53B86 /* AllTasksView.swift */; };
+		42875C802ABF9DFD00F53B86 /* AllTasksSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42875C7F2ABF9DFD00F53B86 /* AllTasksSlider.swift */; };
 		42AAE7A92AB174EF00D6E27E /* InterviewAceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AAE7A82AB174EF00D6E27E /* InterviewAceTests.swift */; };
 		42CBC5122AB151B2001D19F9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CBC5112AB151B2001D19F9 /* Persistence.swift */; };
 		42CBC5152AB1521D001D19F9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CBC5142AB1521D001D19F9 /* Colors.swift */; };
@@ -63,7 +64,6 @@
 		422941912AB152FA00F8DEF2 /* Streak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
 		422941922AB152FA00F8DEF2 /* AppBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBanner.swift; sourceTree = "<group>"; };
 		422941932AB152FA00F8DEF2 /* TimeSpent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSpent.swift; sourceTree = "<group>"; };
-		4229419B2AB1534700F8DEF2 /* MyTasksHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTasksHeader.swift; sourceTree = "<group>"; };
 		4229419C2AB1534700F8DEF2 /* MyTasksSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTasksSlider.swift; sourceTree = "<group>"; };
 		422941A12AB1538B00F8DEF2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		422941A42AB1539D00F8DEF2 /* HomeScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -85,6 +85,8 @@
 		4278313F2ABE2810001F845F /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		427831402ABE2FB3001F845F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		427831422ABE583D001F845F /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
+		42875C7A2ABF9DA300F53B86 /* AllTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksView.swift; sourceTree = "<group>"; };
+		42875C7F2ABF9DFD00F53B86 /* AllTasksSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksSlider.swift; sourceTree = "<group>"; };
 		42AAE79D2AB1742D00D6E27E /* InterviewAceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterviewAceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AAE7A82AB174EF00D6E27E /* InterviewAceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAceTests.swift; sourceTree = "<group>"; };
 		42AAE7AB2AB1752B00D6E27E /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
@@ -139,7 +141,6 @@
 		422941992AB1531C00F8DEF2 /* MyTasksScreenComponents */ = {
 			isa = PBXGroup;
 			children = (
-				4229419B2AB1534700F8DEF2 /* MyTasksHeader.swift */,
 				4229419C2AB1534700F8DEF2 /* MyTasksSlider.swift */,
 			);
 			path = MyTasksScreenComponents;
@@ -151,6 +152,7 @@
 				422941A42AB1539D00F8DEF2 /* HomeScreenView.swift */,
 				422941A52AB1539D00F8DEF2 /* MyTasksView.swift */,
 				427831422ABE583D001F845F /* ResourcesView.swift */,
+				42875C7A2ABF9DA300F53B86 /* AllTasksView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +164,14 @@
 				422941A92AB153B000F8DEF2 /* UserDefaultsHelper.swift */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		42875C7E2ABF9DD900F53B86 /* AllTasksScreenComponents */ = {
+			isa = PBXGroup;
+			children = (
+				42875C7F2ABF9DFD00F53B86 /* AllTasksSlider.swift */,
+			);
+			path = AllTasksScreenComponents;
 			sourceTree = "<group>";
 		};
 		42AAE7A72AB174D600D6E27E /* InterviewAceTests */ = {
@@ -233,6 +243,7 @@
 				422941A82AB153AA00F8DEF2 /* Tutorial */,
 				422941A32AB1539400F8DEF2 /* Views */,
 				422941992AB1531C00F8DEF2 /* MyTasksScreenComponents */,
+				42875C7E2ABF9DD900F53B86 /* AllTasksScreenComponents */,
 				422941842AB152A500F8DEF2 /* HomeScreenComponents */,
 				42CBC5182AB15226001D19F9 /* Common */,
 				42CBC5132AB151C4001D19F9 /* Boot */,
@@ -370,9 +381,11 @@
 			files = (
 				422941AB2AB153B000F8DEF2 /* UserDefaultsHelper.swift in Sources */,
 				422941BB2AB1595A00F8DEF2 /* StreakTrackerEntity+CoreDataClass.swift in Sources */,
+				42875C802ABF9DFD00F53B86 /* AllTasksSlider.swift in Sources */,
 				42F8EC0C2AB14DEE00E74AB5 /* InterviewAceApp.swift in Sources */,
 				422941972AB152FA00F8DEF2 /* AppBanner.swift in Sources */,
 				422941942AB152FA00F8DEF2 /* ProgressChart.swift in Sources */,
+				42875C7B2ABF9DA300F53B86 /* AllTasksView.swift in Sources */,
 				422941A62AB1539D00F8DEF2 /* HomeScreenView.swift in Sources */,
 				422941AC2AB153B000F8DEF2 /* TutorialView.swift in Sources */,
 				42CBC5152AB1521D001D19F9 /* Colors.swift in Sources */,
@@ -389,7 +402,6 @@
 				42F8EC422AB1519700E74AB5 /* BootUtils.swift in Sources */,
 				422941982AB152FA00F8DEF2 /* TimeSpent.swift in Sources */,
 				422941BC2AB1595A00F8DEF2 /* StreakTrackerEntity+CoreDataProperties.swift in Sources */,
-				4229419D2AB1534700F8DEF2 /* MyTasksHeader.swift in Sources */,
 				4278313A2ABE1CC2001F845F /* SideMenu.swift in Sources */,
 				422941A72AB1539D00F8DEF2 /* MyTasksView.swift in Sources */,
 				427831432ABE583D001F845F /* ResourcesView.swift in Sources */,

@@ -14,6 +14,7 @@ extension ProgressEntity {
     @NSManaged public var id: UUID
     @NSManaged public var overallProgress: Double
     @NSManaged public var totalTimeInvested: Int32
+    @NSManaged public var allItems: NSSet
     @NSManaged public var todaysItems: NSSet
     @NSManaged public var activities: NSSet
     @NSManaged public var totalTasks: Int32
@@ -23,6 +24,14 @@ extension ProgressEntity {
     
     public var todaysItemsArray: [TaskEntity] {
         let set = todaysItems as? Set<TaskEntity> ?? []
+        
+        return set.sorted { (task1, task2) in
+            return task1.taskId < task2.taskId
+        }
+    }
+    
+    public var allItemsArray: [TaskEntity] {
+        let set = allItems as? Set<TaskEntity> ?? []
         
         return set.sorted { (task1, task2) in
             return task1.taskId < task2.taskId

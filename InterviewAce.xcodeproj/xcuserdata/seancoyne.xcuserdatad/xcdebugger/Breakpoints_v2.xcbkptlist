@@ -14,8 +14,8 @@
             filePath = "InterviewAce/Boot/BootUtils.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "SeedInitialData(container:)"
             landmarkType = "9">
             <Locations>

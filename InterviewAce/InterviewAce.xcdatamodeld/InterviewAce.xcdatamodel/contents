@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22G91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="22G91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DailyActivityEntity" representedClassName="DailyActivityEntity" syncable="YES">
         <attribute name="activityCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -17,6 +17,7 @@
         <attribute name="totalTasks" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="totalTimeInvested" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DailyActivityEntity" inverseName="activities" inverseEntity="DailyActivityEntity"/>
+        <relationship name="allItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TaskEntity" inverseName="allItems" inverseEntity="TaskEntity"/>
         <relationship name="todaysItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TaskEntity" inverseName="todaysItems" inverseEntity="TaskEntity"/>
     </entity>
     <entity name="StreakTrackerEntity" representedClassName=".StreakTrackerEntity" syncable="YES">
@@ -38,6 +39,7 @@
         <attribute name="taskId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="taskTitle" optional="YES" attributeType="String"/>
         <attribute name="taskType" optional="YES" attributeType="String"/>
+        <relationship name="allItems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProgressEntity" inverseName="allItems" inverseEntity="ProgressEntity"/>
         <relationship name="todaysItems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProgressEntity" inverseName="todaysItems" inverseEntity="ProgressEntity"/>
     </entity>
 </model>

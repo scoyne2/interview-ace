@@ -51,18 +51,18 @@ struct SideMenuView: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                     
-                    // Tasks
+                    // Today's Tasks
                     NavigationLink(destination: MyTasksView(heightMultiplier: heightMultiplier, widthMultiplier: widthMultiplier, currentProgress: currentProgress, streakTrackerEntity: streakTrackerEntity).environment(\.managedObjectContext, viewContext)) {
                         HStack(spacing: 20){
                             
-                            Image(systemName: "list.bullet")
+                            Image(systemName: "checklist")
                                 .resizable()
                                 .renderingMode(.template)
                                 .foregroundColor(.white)
                                 .frame(width: 22, height: 22)
                                 .padding(.leading)
                             
-                            Text("Tasks")
+                            Text("Today's Tasks")
                                 .font(Font.custom("Poppins", size: 14).weight(.regular))
                                 .foregroundColor(.white)
                             
@@ -99,6 +99,32 @@ struct SideMenuView: View {
                         }.frame(height: 50)
                     }
                     .buttonStyle(PlainButtonStyle())
+                    
+                    // All Tasks
+                    NavigationLink(destination: AllTasksView(heightMultiplier: heightMultiplier, widthMultiplier: widthMultiplier, currentProgress: currentProgress, streakTrackerEntity: streakTrackerEntity).environment(\.managedObjectContext, viewContext)) {
+                        HStack(spacing: 20){
+                            
+                            Image(systemName: "checklist.unchecked")
+                                .resizable()
+                                .renderingMode(.template)
+                                .foregroundColor(.white)
+                                .frame(width: 22, height: 22)
+                                .padding(.leading)
+                            
+                            Text("All Tasks")
+                                .font(Font.custom("Poppins", size: 14).weight(.regular))
+                                .foregroundColor(.white)
+                            
+                            Spacer()
+                            
+                            Rectangle()
+                                .fill(.white)
+                                .frame(width: 5)
+                            
+                        }.frame(height: 50)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
                     
                     
                     Spacer()
