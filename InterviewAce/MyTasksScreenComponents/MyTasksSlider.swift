@@ -15,6 +15,7 @@ struct MyTasksSlider: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     
+    
     func toggleTaskCompletion(task: TaskEntity, currentProgress: ProgressEntity, streakTrackerEntity: StreakTrackerEntity) {
         var activityCountIncrement = 0
         if task.isCompleted {

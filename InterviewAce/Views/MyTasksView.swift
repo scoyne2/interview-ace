@@ -2,6 +2,7 @@ import SwiftUI
 
 
 struct MyTasksView: View {
+    @State private var showMenu = false
     let heightMultiplier: CGFloat
     let widthMultiplier: CGFloat
     @ObservedObject var currentProgress: ProgressEntity
@@ -11,10 +12,27 @@ struct MyTasksView: View {
     var body: some View {
         ZStack {
             Color(red: 0.13, green: 0.15, blue: 0.22).edgesIgnoringSafeArea(.all)
+            
+            // Menu
+            VStack{
+                SideMenu(showMenu: $showMenu, heightMultiplier: heightMultiplier, widthMultiplier: widthMultiplier, currentProgress: currentProgress, streakTrackerEntity: streakTrackerEntity)
+                Spacer()
+            }.zIndex(99)
+            
             VStack(alignment: .leading) {
                 
                 // Header
-                MyTasksHeader(heightMultiplier: heightMultiplier)
+                HStack() {
+                    
+                    Spacer()
+                    
+                    Text("My Tasks")
+                        .font(Font.custom("Poppins", size: 20).weight(.bold))
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                }.padding(.bottom)
+                    .padding(.top)
                 
                 Spacer()
                 

@@ -15,6 +15,7 @@ struct InterviewAceApp: App {
                     if isShowingTutorial {
                         TutorialView(isShowing: $isShowingTutorial)
                     } else {
+                        
                         HomeScreenView()
                             .environment(\.managedObjectContext, persistenceController.container.viewContext)
                         

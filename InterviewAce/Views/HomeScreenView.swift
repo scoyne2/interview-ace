@@ -14,6 +14,8 @@ struct HomeScreenView: View {
         animation: .default)
     private var streakTrackers: FetchedResults<StreakTrackerEntity>
     
+    @State private var showMenu = false
+    
     let screenHeight = UIScreen.main.bounds.height
     let screenWidth = UIScreen.main.bounds.width
     
@@ -43,8 +45,16 @@ struct HomeScreenView: View {
     var body: some View {
         if let progress = items.first {
             ZStack {
+                
                 Color(red: 0.13, green: 0.15, blue: 0.22).edgesIgnoringSafeArea(.all)
+                // Menu
+                VStack{
+                    SideMenu(showMenu: $showMenu, heightMultiplier: heightMultiplier, widthMultiplier: widthMultiplier, currentProgress:progress, streakTrackerEntity: streakTrackers.first!)
+                    Spacer()
+                }.zIndex(99)
+                
                 VStack(alignment: .leading) {
+                    
                     // Title and subtitle
                     AppBanner(heightMultiplier: heightMultiplier)
                         .padding(.leading, 30)
@@ -73,7 +83,7 @@ struct HomeScreenView: View {
                     .padding(.trailing, 30)
                     .padding(.top, heightMultiplier == 1 ? -30 : -40*heightMultiplier)
                 }
-            }
+            }.navigationBarBackButtonHidden(true)
         }
     }
 }
