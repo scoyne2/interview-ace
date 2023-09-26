@@ -41,9 +41,34 @@ struct HomeScreenView: View {
         }
     }
     
+    func handleNotificationPermission(currentProgress: ProgressEntity) {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.badge, .alert, .sound]) { (granted, error) in
+            if granted {
+                print("Notifications allowed!")
+                currentProgress.allowNotifications = true
+            } else {
+                print("Notifications not allowed!")
+                currentProgress.allowNotifications = false
+            }
+        }
+        currentProgress.hasSeenNotificationsPrompt = true
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print("Failed to save context during handleNotificationPermission(): \(error)")
+        }
+        
+    }
+    
     
     var body: some View {
+        
         if let progress = items.first {
+            if (progress.hasSeenNotificationsPrompt == false){
+                let _ = handleNotificationPermission(currentProgress: progress)
+            }
             ZStack {
                 
                 Color(red: 0.13, green: 0.15, blue: 0.22).edgesIgnoringSafeArea(.all)

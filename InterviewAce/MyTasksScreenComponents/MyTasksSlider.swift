@@ -20,10 +20,15 @@ struct MyTasksSlider: View {
         var activityCountIncrement = 0
         if task.isCompleted {
             currentProgress.completedTasks -= 1
+            currentProgress.remainingTasks += 1
             currentProgress.totalTimeInvested -= Int32(task.estimatedTime)
             activityCountIncrement = -1
+            
+            
+            
         } else {
             currentProgress.completedTasks += 1
+            currentProgress.remainingTasks -= 1
             currentProgress.totalTimeInvested += Int32(task.estimatedTime)
             activityCountIncrement = 1
         }
@@ -41,6 +46,8 @@ struct MyTasksSlider: View {
         } catch {
             print("Failed to save context during toggleTaskCompletion(): \(error)")
         }
+        
+        setBadgeCount(count: Int(currentProgress.remainingTasks))
     }
     
     func calculateStreak(task: TaskEntity, currentProgress: ProgressEntity, streakTrackerEntity: StreakTrackerEntity) {

@@ -1,6 +1,7 @@
 import Foundation
 import CoreData
 import SwiftUI
+import UserNotifications
 
 func getColor(taskType: String) -> Color {
     switch taskType {
@@ -42,4 +43,8 @@ func getIcon(taskType: String) -> String {
     default:
         return "gear"
     }
+}
+
+func setBadgeCount(count: Int) {
+    UIApplication.shared.applicationIconBadgeNumber = count
 }

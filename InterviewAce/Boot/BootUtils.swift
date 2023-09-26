@@ -17,7 +17,7 @@ struct TaskEntityJSONRepresentation: Codable {
 func fetchAllTasks(container: NSPersistentContainer) -> [TaskEntity] {
     let context = container.viewContext
     let fetchRequest: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
-
+    
     // Execute the fetch request
     do {
         let tasks = try context.fetch(fetchRequest)
@@ -45,6 +45,23 @@ func fetchTasksScheduledForDay(container: NSPersistentContainer, day: Int32) -> 
     }
 }
 
+func getIncompleteTasksForToday(container: NSPersistentContainer, day: Int32) -> Int {
+    let context = container.viewContext
+    let fetchRequest: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
+    
+    // Set the predicate
+    fetchRequest.predicate = NSPredicate(format: "isCompleted == %d AND dayScheduled <= %d", false, day)
+    
+    // Execute the fetch request
+    do {
+        let tasks = try context.fetch(fetchRequest)
+        return tasks.count
+    } catch {
+        print("Error fetching tasks on getIncompleteTasksForToday(): \(error)")
+        return 0
+    }
+}
+
 func PrepareTodaysTasks(container: NSPersistentContainer) -> Void{
     let context = container.viewContext
     let fetchRequest: NSFetchRequest<ProgressEntity> = ProgressEntity.fetchRequest()
@@ -58,22 +75,28 @@ func PrepareTodaysTasks(container: NSPersistentContainer) -> Void{
             print("No Item found in the datastore")
             return
         }
-                
+        
         let startDate = userProfile.startDate
         let components = calendar.dateComponents([.day], from: startDate, to: today)
         let day = Int32(components.day ?? 0) + 1
-
+        
         userProfile.currentDay = day
         let todaysTasks = fetchTasksScheduledForDay(container: container, day: day)
         userProfile.todaysItems = NSSet(array: todaysTasks)
         
+        let remainingTasks = getIncompleteTasksForToday(container: container, day: day)
+        userProfile.remainingTasks = Int32(remainingTasks)
+        setBadgeCount(count: remainingTasks)
+        print("Todays Items \(remainingTasks)")
+        
         let allTasks = fetchAllTasks(container: container)
         userProfile.allItems = NSSet(array: allTasks)
-
+        
         try context.save()
     } catch {
         print("Error in PrepareTodaysTasks: \(error)")
     }
+    
 }
 
 func PrepareTodaysActivities(container: NSPersistentContainer) -> Void{
@@ -202,6 +225,9 @@ func SeedInitialData(container: NSPersistentContainer) -> Void{
             newItem.completedTasks = 0
             newItem.currentDay = 1
             newItem.startDate = today
+            newItem.hasSeenNotificationsPrompt = false
+            newItem.allowNotifications = false
+            newItem.remainingTasks = 0
             
             if let url = Bundle.main.url(forResource: "tasks", withExtension: "json") {
                 do {
