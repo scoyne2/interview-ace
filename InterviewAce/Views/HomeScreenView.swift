@@ -3,6 +3,7 @@ import CoreData
 
 struct HomeScreenView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @ObservedObject var websocket = Websocket()
     
     @FetchRequest(
         sortDescriptors: [],

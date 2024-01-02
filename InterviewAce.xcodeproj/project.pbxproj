@@ -46,6 +46,7 @@
 		42F8EC2B2AB14E2800E74AB5 /* tutorial3.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F8EC242AB14E2800E74AB5 /* tutorial3.png */; };
 		42F8EC3B2AB14E8400E74AB5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F8EC332AB14E8400E74AB5 /* Media.xcassets */; };
 		42F8EC422AB1519700E74AB5 /* BootUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8EC412AB1519700E74AB5 /* BootUtils.swift */; };
+		BEFEBD072B43A74E00FBC370 /* Websocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFEBD062B43A74E00FBC370 /* Websocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		42F8EC332AB14E8400E74AB5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		42F8EC412AB1519700E74AB5 /* BootUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootUtils.swift; sourceTree = "<group>"; };
 		42FE56BE2AB2121E00F25DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BEFEBD062B43A74E00FBC370 /* Websocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Websocket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				42FE56BE2AB2121E00F25DCD /* Info.plist */,
+				BEFEBD062B43A74E00FBC370 /* Websocket.swift */,
 				422941A82AB153AA00F8DEF2 /* Tutorial */,
 				422941A32AB1539400F8DEF2 /* Views */,
 				422941992AB1531C00F8DEF2 /* MyTasksScreenComponents */,
@@ -386,6 +389,7 @@
 				422941972AB152FA00F8DEF2 /* AppBanner.swift in Sources */,
 				422941942AB152FA00F8DEF2 /* ProgressChart.swift in Sources */,
 				42875C7B2ABF9DA300F53B86 /* AllTasksView.swift in Sources */,
+				BEFEBD072B43A74E00FBC370 /* Websocket.swift in Sources */,
 				422941A62AB1539D00F8DEF2 /* HomeScreenView.swift in Sources */,
 				422941AC2AB153B000F8DEF2 /* TutorialView.swift in Sources */,
 				42CBC5152AB1521D001D19F9 /* Colors.swift in Sources */,
