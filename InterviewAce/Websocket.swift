@@ -2,7 +2,7 @@ import SwiftUI
 
 class Websocket: ObservableObject {
     @Published var messages = [String]()
-    
+  
     private var webSocketTask: URLSessionWebSocketTask?
     
     init() {
@@ -14,7 +14,7 @@ class Websocket: ObservableObject {
     }
     
     private func connect() throws {
-           let userId = UIDevice.current.identifierForVendor!.uuidString
+        let userId = UIDevice.current.identifierForVendor?.uuidString ?? "unknown"
            guard let url = URL(string: "wss://w6w7zfl0r1.execute-api.us-west-2.amazonaws.com/production/?userId=\(userId)") else {
                throw NSError(domain: "Invalid URL", code: 0, userInfo: nil)
            }
@@ -34,26 +34,20 @@ class Websocket: ObservableObject {
             case .failure(let error):
                 print(error.localizedDescription)
             case .success(let message):
-                switch message {
-                case .string(let text):
-                    self.messages.append(text)
-                    print(text)
-                case .data(let data):
-                    // Handle binary data
-                    break
-                @unknown default:
-                    break
+                DispatchQueue.main.async {
+                    switch message {
+                    case .string(let text):
+                        self.messages.append(text)
+                        print(text)
+                    case .data(_):
+                        // Handle binary data
+                        break
+                    @unknown default:
+                        break
+                    }
                 }
             }
+            self.receiveMessage() // Continue listening for messages
         }
-    }
-    
-    func sendMessage(_ message: String) {
-        guard let data = message.data(using: .utf8) else { return }
-        webSocketTask?.send(.string(message)) { error in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-    }
+    }    
 }

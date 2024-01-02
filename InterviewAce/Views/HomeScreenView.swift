@@ -65,7 +65,6 @@ struct HomeScreenView: View {
     
     
     var body: some View {
-        
         if let progress = items.first {
             if (progress.hasSeenNotificationsPrompt == false){
                 let _ = handleNotificationPermission(currentProgress: progress)
@@ -80,7 +79,6 @@ struct HomeScreenView: View {
                 }.zIndex(99)
                 
                 VStack(alignment: .leading) {
-                    
                     // Title and subtitle
                     AppBanner(heightMultiplier: heightMultiplier)
                         .padding(.leading, 30)
@@ -108,6 +106,7 @@ struct HomeScreenView: View {
                     .padding(.leading, 30)
                     .padding(.trailing, 30)
                     .padding(.top, heightMultiplier == 1 ? -30 : -40*heightMultiplier)
+                    
                 }
             }.navigationBarBackButtonHidden(true)
         }
