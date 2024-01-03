@@ -46,6 +46,7 @@
 		42F8EC2B2AB14E2800E74AB5 /* tutorial3.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F8EC242AB14E2800E74AB5 /* tutorial3.png */; };
 		42F8EC3B2AB14E8400E74AB5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F8EC332AB14E8400E74AB5 /* Media.xcassets */; };
 		42F8EC422AB1519700E74AB5 /* BootUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8EC412AB1519700E74AB5 /* BootUtils.swift */; };
+		BE57F8282B44F2B3002039B5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BE57F8272B44F2B3002039B5 /* FirebaseAnalytics */; };
 		BEFEBD072B43A74E00FBC370 /* Websocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFEBD062B43A74E00FBC370 /* Websocket.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE57F8282B44F2B3002039B5 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +302,9 @@
 			dependencies = (
 			);
 			name = InterviewAce;
+			packageProductDependencies = (
+				BE57F8272B44F2B3002039B5 /* FirebaseAnalytics */,
+			);
 			productName = InterviewAce;
 			productReference = 42F8EC082AB14DEE00E74AB5 /* InterviewAce.app */;
 			productType = "com.apple.product-type.application";
@@ -333,6 +338,9 @@
 				Base,
 			);
 			mainGroup = 42F8EBFF2AB14DEE00E74AB5;
+			packageReferences = (
+				BE57F8262B44F2B3002039B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 42F8EC092AB14DEE00E74AB5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -595,7 +603,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InterviewAce/Preview Content\"";
-				DEVELOPMENT_TEAM = L4E7659XTW;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InterviewAce/Info.plist;
@@ -630,7 +638,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InterviewAce/Preview Content\"";
-				DEVELOPMENT_TEAM = L4E7659XTW;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InterviewAce/Info.plist;
@@ -688,6 +696,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BE57F8262B44F2B3002039B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BE57F8272B44F2B3002039B5 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE57F8262B44F2B3002039B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		42F8EC162AB14DEF00E74AB5 /* InterviewAce.xcdatamodeld */ = {
