@@ -47,6 +47,9 @@
 		42F8EC3B2AB14E8400E74AB5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F8EC332AB14E8400E74AB5 /* Media.xcassets */; };
 		42F8EC422AB1519700E74AB5 /* BootUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8EC412AB1519700E74AB5 /* BootUtils.swift */; };
 		BE57F8282B44F2B3002039B5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BE57F8272B44F2B3002039B5 /* FirebaseAnalytics */; };
+		BED5EF7D2B44FFF40045A22F /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BED5EF7C2B44FFF40045A22F /* FirebaseMessaging */; };
+		BED5EF7F2B45006B0045A22F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5EF7E2B45006B0045A22F /* AppDelegate.swift */; };
+		BED5EF812B45030D0045A22F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BED5EF802B45030D0045A22F /* GoogleService-Info.plist */; };
 		BEFEBD072B43A74E00FBC370 /* Websocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFEBD062B43A74E00FBC370 /* Websocket.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +109,9 @@
 		42F8EC332AB14E8400E74AB5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		42F8EC412AB1519700E74AB5 /* BootUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootUtils.swift; sourceTree = "<group>"; };
 		42FE56BE2AB2121E00F25DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BED5EF7B2B44F64E0045A22F /* InterviewAce.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InterviewAce.entitlements; sourceTree = "<group>"; };
+		BED5EF7E2B45006B0045A22F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BED5EF802B45030D0045A22F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "InterviewAce/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEFEBD062B43A74E00FBC370 /* Websocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Websocket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED5EF7D2B44FFF40045A22F /* FirebaseMessaging in Frameworks */,
 				BE57F8282B44F2B3002039B5 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +214,7 @@
 		42F8EBFF2AB14DEE00E74AB5 = {
 			isa = PBXGroup;
 			children = (
+				BED5EF802B45030D0045A22F /* GoogleService-Info.plist */,
 				4267FC6C2ABCB19700A3EAB3 /* LICENSE.txt */,
 				42AAE7AB2AB1752B00D6E27E /* TestPlan.xctestplan */,
 				422941BD2AB165B500F8DEF2 /* README.md */,
@@ -243,6 +251,7 @@
 		42F8EC0A2AB14DEE00E74AB5 /* InterviewAce */ = {
 			isa = PBXGroup;
 			children = (
+				BED5EF7B2B44F64E0045A22F /* InterviewAce.entitlements */,
 				42FE56BE2AB2121E00F25DCD /* Info.plist */,
 				BEFEBD062B43A74E00FBC370 /* Websocket.swift */,
 				422941A82AB153AA00F8DEF2 /* Tutorial */,
@@ -254,6 +263,7 @@
 				42CBC5132AB151C4001D19F9 /* Boot */,
 				42F8EC332AB14E8400E74AB5 /* Media.xcassets */,
 				42F8EC0B2AB14DEE00E74AB5 /* InterviewAceApp.swift */,
+				BED5EF7E2B45006B0045A22F /* AppDelegate.swift */,
 				42F8EC162AB14DEF00E74AB5 /* InterviewAce.xcdatamodeld */,
 				42F8EC112AB14DEF00E74AB5 /* Preview Content */,
 			);
@@ -304,6 +314,7 @@
 			name = InterviewAce;
 			packageProductDependencies = (
 				BE57F8272B44F2B3002039B5 /* FirebaseAnalytics */,
+				BED5EF7C2B44FFF40045A22F /* FirebaseMessaging */,
 			);
 			productName = InterviewAce;
 			productReference = 42F8EC082AB14DEE00E74AB5 /* InterviewAce.app */;
@@ -370,6 +381,7 @@
 				42F8EC252AB14E2800E74AB5 /* tutorial1.png in Resources */,
 				42F8EC3B2AB14E8400E74AB5 /* Media.xcassets in Resources */,
 				42F8EC292AB14E2800E74AB5 /* tutorial2.png in Resources */,
+				BED5EF812B45030D0045A22F /* GoogleService-Info.plist in Resources */,
 				42F8EC2B2AB14E2800E74AB5 /* tutorial3.png in Resources */,
 				42F8EC2A2AB14E2800E74AB5 /* Fonts in Resources */,
 			);
@@ -412,6 +424,7 @@
 				422941B72AB1564400F8DEF2 /* DailyActivityEntity+CoreDataProperties.swift in Sources */,
 				4229419E2AB1534700F8DEF2 /* MyTasksSlider.swift in Sources */,
 				42F8EC422AB1519700E74AB5 /* BootUtils.swift in Sources */,
+				BED5EF7F2B45006B0045A22F /* AppDelegate.swift in Sources */,
 				422941982AB152FA00F8DEF2 /* TimeSpent.swift in Sources */,
 				422941BC2AB1595A00F8DEF2 /* StreakTrackerEntity+CoreDataProperties.swift in Sources */,
 				4278313A2ABE1CC2001F845F /* SideMenu.swift in Sources */,
@@ -600,10 +613,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InterviewAce/InterviewAce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InterviewAce/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L4E7659XTW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InterviewAce/Info.plist;
@@ -635,10 +649,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InterviewAce/InterviewAce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InterviewAce/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L4E7659XTW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InterviewAce/Info.plist;
@@ -713,6 +728,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BE57F8262B44F2B3002039B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		BED5EF7C2B44FFF40045A22F /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE57F8262B44F2B3002039B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 

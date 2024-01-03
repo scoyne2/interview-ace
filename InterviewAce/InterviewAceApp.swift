@@ -2,6 +2,8 @@ import SwiftUI
 
 @main
 struct InterviewAceApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     let persistenceController = PersistenceController.shared
     
     // This state will control whether the tutorial is showing or not
