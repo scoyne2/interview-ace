@@ -337,3 +337,56 @@ func SeedPreviewData(context: NSManagedObjectContext) -> Void{
         print("Error seeding data: \(error)")
     }
 }
+
+
+func PostUserData(container: NSPersistentContainer) {
+    let context = container.viewContext
+    let fetchRequestItem: NSFetchRequest<ProgressEntity> = ProgressEntity.fetchRequest()
+
+    do {
+        let fetchedItems = try context.fetch(fetchRequestItem)
+        guard let userProfile = fetchedItems.first else {
+            print("No Item found in the datastore")
+            return
+        }
+
+        // Define the URL
+        guard let url = URL(string: "https://ut7c9ss8n3.execute-api.us-west-2.amazonaws.com/production/user") else {
+            return
+        }
+
+        // Define the JSON body
+        let jsonBody: [String: Any] = [
+            "user_id": userProfile.id.uuidString,
+            "allow_notifications": userProfile.allowNotifications,
+            "days_of_streak": userProfile.daysOfStreak,
+            "overall_progress": userProfile.overallProgress,
+            "remaining_tasks": userProfile.remainingTasks
+        ]
+
+        // Convert the JSON body to Data
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonBody) else {
+            return
+        }
+
+        // Create the URLRequest
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        // Make the URLSession data task
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Synced User Status")
+            }
+        }.resume()
+    } catch {
+        print("Error in PostUserData: \(error)")
+    }
+}

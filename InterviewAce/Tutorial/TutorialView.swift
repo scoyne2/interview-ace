@@ -6,7 +6,6 @@ struct TutorialView: View {
     
     @State private var selectedTab: Int = 0
     
-    
     var body: some View {
         ZStack {
             Color(red: 0.13, green: 0.15, blue: 0.22).edgesIgnoringSafeArea(.all)

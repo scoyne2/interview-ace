@@ -63,7 +63,6 @@ struct HomeScreenView: View {
         
     }
     
-    
     var body: some View {
         if let progress = items.first {
             if (progress.hasSeenNotificationsPrompt == false){

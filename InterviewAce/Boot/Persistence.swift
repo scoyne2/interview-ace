@@ -39,5 +39,8 @@ struct PersistenceController {
         
         // Handle streaks and set todays Activity as 0 if it does not already exist
         PrepareTodaysActivities(container: container)
+        
+        // Post the users data to the InterviewAce REST Api
+        PostUserData(container: container)
     }
 }
