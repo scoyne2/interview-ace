@@ -4,7 +4,7 @@ CREATE TABLE users (
     days_of_streak integer,
     overall_progress numeric,
     remaining_tasks integer,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone DEFAULT current_timestamp
 );
 
 CREATE INDEX idx_users_id ON users (id);
