@@ -1,0 +1,14 @@
+{
+	"name": "InterviewAce",
+	"image": "mcr.microsoft.com/devcontainers/go:0-1.19",
+	"features": {
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {},
+		"ghcr.io/devcontainers-contrib/features/terraform-asdf:2.0.9": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2.3.0": {},
+		"ghcr.io/devcontainers/features/python:1": {},
+		"ghcr.io/devcontainers-contrib/features/terraform-asdf:2": {}
+	},
+	"postCreateCommand": "bash .devcontainer/env.sh",
+	"forwardPorts": [3000,8080,80]
+}

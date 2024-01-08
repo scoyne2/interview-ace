@@ -1,4 +1,5 @@
 # Interview Ace
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=540243984)
 
 ## Privacy Policy
 The Interview Ace does not capture or share any data or user information.
@@ -21,3 +22,6 @@ CI/CD is handled by Xcode Cloud. Each time a change is pushed to the main branch
 
 # Support Page
 Github Pages is used to host [https://scoyne2.github.io/interview-ace/](https://scoyne2.github.io/interview-ace/) which is the support page for the app. Github Actions automatically builds the Page when any changes are made to this readme. The content of the page is this readme. The build process for the page can be monitored [here](https://github.com/scoyne2/interview-ace/actions/workflows/pages/pages-build-deployment).
+
+## Codespaces
+If you are running this in codespaces you can skip the below homebrew install. Create [codespace secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces) for `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. You will still need to complete the `Env Setup` steps.
