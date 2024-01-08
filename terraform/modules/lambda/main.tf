@@ -17,6 +17,11 @@ resource "aws_iam_role" "interview-ace-lambda-role" {
   assume_role_policy = data.aws_iam_policy_document.interview-ace-lambda-assume-role-policy.json
 }
 
+resource "aws_iam_role_policy_attachment" "interview-ace-lambda-policy" {
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+  role       = aws_iam_role.interview-ace-lambda-role.name
+}
+
 data "archive_file" "interview-ace-websocket-lambda-package" {
   type = "zip"
   source_file = "${path.module}/websocket-lambda/lambda.py"
