@@ -10,13 +10,16 @@ module "dynamodb" {
   source = "./modules/dynamodb"
 }
 
-# module "apigateway" {
-#   source = "./modules/apigateway"
-# }
+module "lambda" {
+  source = "./modules/lambda"
+  connections-table-name = module.dynamodb.connections-table-name
+  connections-history-table-name = module.dynamodb.connections-history-table-name
+}
 
-# module "lambda" {
-#   source = "./modules/lambda"
-# }
+module "apigateway" {
+  source = "./modules/apigateway"
+  websocket-lambda-arn = module.lambda.websocket-lambda-arn
+}
 
 # module "rds" {
 #   source = "./modules/rds"
