@@ -1,4 +1,5 @@
 variable "websocket-lambda-arn" {}
+variable "websocket-function-name" {}
 
 resource "aws_apigatewayv2_api" "interview-ace-websocket-api-gateway" {
   name                       = "interview-ace-websocket-api-gateway"
@@ -68,6 +69,14 @@ resource "aws_apigatewayv2_route_response" "interview-ace-websocket-route-respon
   route_response_key = "$default"
 
   depends_on = [ aws_apigatewayv2_route.interview-ace-websocket-route-disconnect ]
+}
+
+resource "aws_lambda_permission" "interview-ace-websocket-lambda-trigger" {
+     statement_id  = "AllowAllowLambdaInvokee"
+     action        = "lambda:InvokeFunction"
+     function_name = var.websocket-function-name
+     principal     = "apigateway.amazonaws.com"
+     source_arn    = "${aws_apigatewayv2_api.interview-ace-websocket-api-gateway.execution_arn}/*"
 }
 
 # stage

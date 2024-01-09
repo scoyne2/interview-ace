@@ -20,6 +20,7 @@ module "lambda" {
 module "apigateway" {
   source = "./modules/apigateway"
   websocket-lambda-arn = module.lambda.websocket-lambda-arn
+  websocket-function-name = module.lambda.websocket-function-name
   depends_on = [module.lambda]
 }
 

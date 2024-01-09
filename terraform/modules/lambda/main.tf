@@ -17,6 +17,22 @@ resource "aws_iam_role" "interview-ace-lambda-role" {
   assume_role_policy = data.aws_iam_policy_document.interview-ace-lambda-assume-role-policy.json
 }
 
+resource "aws_iam_role_policy" "interview-ace-lambda-policy" {
+  name   = "interview-ace-lambda-policy"
+  role   = aws_iam_role.interview-ace-lambda-role.name
+  policy = jsonencode({
+    "Statement": [
+      {
+        "Action": [
+          "execute-api:ManageConnections",
+        ],
+        "Effect": "Allow",
+        "Resource": "arn:aws:execute-api:us-west-2:*:*",
+      }
+    ]
+  })
+}
+
 resource "aws_iam_role_policy_attachment" "interview-ace-lambda-policy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
   role       = aws_iam_role.interview-ace-lambda-role.name
@@ -29,14 +45,14 @@ data "archive_file" "interview-ace-websocket-lambda-package" {
 }
 
 resource "aws_lambda_function" "interview-ace-websocket-lambda" {
-        function_name = "InterviewAceWebsocketLambda"
-        filename      = "websocket-lambda.zip"
+        function_name    = "InterviewAceWebsocketLambda"
+        filename         = "websocket-lambda.zip"
         source_code_hash = data.archive_file.interview-ace-websocket-lambda-package.output_base64sha256
-        role          = aws_iam_role.interview-ace-lambda-role.arn
-        runtime       = "python3.12"
-        handler       = "lambda_function.lambda_handler"
-        timeout       = 10
-        architectures = ["arm64"]
+        role             = aws_iam_role.interview-ace-lambda-role.arn
+        runtime          = "python3.12"
+        handler          = "lambda.lambda_handler"
+        timeout          = 10
+        architectures    = ["arm64"]
 
          environment {
             variables = {
@@ -48,4 +64,8 @@ resource "aws_lambda_function" "interview-ace-websocket-lambda" {
 
 output "websocket-lambda-arn" {
   value = resource.aws_lambda_function.interview-ace-websocket-lambda.arn
+}
+
+output "websocket-function-name" {
+  value = resource.aws_lambda_function.interview-ace-websocket-lambda.function_name
 }
