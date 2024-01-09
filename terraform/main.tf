@@ -17,11 +17,17 @@ module "lambda" {
   depends_on = [module.dynamodb]
 }
 
+module "route53" {
+  source = "./modules/route53"
+}
+
 module "apigateway" {
   source = "./modules/apigateway"
   websocket-lambda-arn = module.lambda.websocket-lambda-arn
   websocket-function-name = module.lambda.websocket-function-name
-  depends_on = [module.lambda]
+  aws-acm-certificate-arn = module.route53.aws-acm-certificate-arn
+  public-zone-id = module.route53.public-zone-id
+  depends_on = [module.lambda, module.route53]
 }
 
 # module "rds" {
