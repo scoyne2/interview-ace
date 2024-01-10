@@ -1,11 +1,11 @@
-resource "aws_acm_certificate" "api" {
-  domain_name       = "websocket.crackingthedataengineeringinterview.com"
-  validation_method = "DNS"
-}
-
 data "aws_route53_zone" "public" {
   name         = "crackingthedataengineeringinterview.com"
   private_zone = false
+}
+
+resource "aws_acm_certificate" "api" {
+  domain_name       = "websocket.${data.aws_route53_zone.public.name}"
+  validation_method = "DNS"
 }
 
 resource "aws_route53_record" "api-validation" {
@@ -36,4 +36,8 @@ output "aws-acm-certificate-arn" {
 
 output "public-zone-id" {   
     value = data.aws_route53_zone.public.zone_id
+}
+
+output "domain-name" {
+    value = resource.aws_acm_certificate.api.domain_name
 }

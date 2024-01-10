@@ -170,9 +170,9 @@ def lambda_handler(event, context):
             )
             response["statusCode"] = 400
         else:
+
             apig_management_client = boto3.client(
-                "apigatewaymanagementapi", endpoint_url=f"https://{domain}/{stage}"
-            )
+                "apigatewaymanagementapi", endpoint_url=os.environ["WEBSOCKET_HTTP_ENDPOINT"])
             response["statusCode"] = handle_message(
                 table, connection_id, body, apig_management_client
             )

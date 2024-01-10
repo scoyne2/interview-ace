@@ -15,7 +15,7 @@ class Websocket: ObservableObject {
     
     private func connect() throws {
         let userId = UIDevice.current.identifierForVendor?.uuidString ?? "unknown"
-           guard let url = URL(string: "wss://w6w7zfl0r1.execute-api.us-west-2.amazonaws.com/production/?userId=\(userId)") else {
+           guard let url = URL(string: "wss://websocket.crackingthedataengineeringinterview.com/?userId=\(userId)") else {
                throw NSError(domain: "Invalid URL", code: 0, userInfo: nil)
            }
            

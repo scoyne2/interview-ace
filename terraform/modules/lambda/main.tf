@@ -1,5 +1,6 @@
 variable "connections-table-name" {}
 variable "connections-history-table-name" {}
+variable "domain-name" {}
 
 data "aws_iam_policy_document" "interview-ace-lambda-assume-role-policy"{
   statement {
@@ -25,9 +26,17 @@ resource "aws_iam_role_policy" "interview-ace-lambda-policy" {
       {
         "Action": [
           "execute-api:ManageConnections",
+          "execute-api:Invoke",
         ],
         "Effect": "Allow",
         "Resource": "arn:aws:execute-api:us-west-2:*:*",
+      },
+      {
+        "Action": [
+          "dynamodb:*",
+        ],
+        "Effect": "Allow",
+        "Resource": "arn:aws:dynamodb:us-west-2:*:*",
       }
     ]
   })
@@ -58,6 +67,7 @@ resource "aws_lambda_function" "interview-ace-websocket-lambda" {
             variables = {
                 DYNAMODB_TABLE_NAME = var.connections-table-name,
                 DYNAMODB_HISTORY_TABLE_NAME = var.connections-history-table-name
+                WEBSOCKET_HTTP_ENDPOINT = "https://${var.domain-name}"
             }
         }
 }

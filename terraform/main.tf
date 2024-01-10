@@ -10,15 +10,16 @@ module "dynamodb" {
   source = "./modules/dynamodb"
 }
 
+module "route53" {
+  source = "./modules/route53"
+}
+
 module "lambda" {
   source = "./modules/lambda"
   connections-table-name = module.dynamodb.connections-table-name
   connections-history-table-name = module.dynamodb.connections-history-table-name
-  depends_on = [module.dynamodb]
-}
-
-module "route53" {
-  source = "./modules/route53"
+  domain-name = module.route53.domain-name
+  depends_on = [module.dynamodb, module.route53]
 }
 
 module "apigateway" {
