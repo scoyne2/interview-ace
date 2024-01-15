@@ -6,11 +6,13 @@ class Websocket: ObservableObject {
     private var webSocketTask: URLSessionWebSocketTask?
     
     init() {
-        do {
-            try self.connect()
-        } catch {
-            print("Error: Unable to establish WebSocket connection. Check your internet connection.")
-        }
+        print("Websocket disabled")
+        // Removed to save AWS costs
+//        do {
+//            try self.connect()
+//        } catch {
+//            print("Error: Unable to establish WebSocket connection. Check your internet connection.")
+//        }
     }
     
     private func connect() throws {

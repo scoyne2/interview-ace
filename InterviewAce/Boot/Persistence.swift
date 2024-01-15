@@ -41,6 +41,7 @@ struct PersistenceController {
         PrepareTodaysActivities(container: container)
         
         // Post the users data to the InterviewAce REST Api
-        PostUserData(container: container)
+        // Removed to save AWS cost
+        //PostUserData(container: container)
     }
 }
