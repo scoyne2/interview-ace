@@ -1,3 +1,4 @@
+import GoogleMobileAds
 import UIKit
 import Firebase
 import FirebaseMessaging
@@ -13,8 +14,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     UNUserNotificationCenter.current().requestAuthorization(
       options: authOptions) { _, _ in }
     application.registerForRemoteNotifications()
-
+      
     Messaging.messaging().delegate = self
+
+    GADMobileAds.sharedInstance().start(completionHandler: nil)
 
     return true
   }

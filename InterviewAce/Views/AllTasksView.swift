@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 struct AllTasksView: View {
     @State private var showMenu = false
     let heightMultiplier: CGFloat
@@ -20,7 +19,6 @@ struct AllTasksView: View {
             }.zIndex(99)
             
             VStack(alignment: .leading) {
-                
                 // Header
                 HStack() {
                     

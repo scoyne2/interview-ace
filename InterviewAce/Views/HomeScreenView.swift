@@ -1,5 +1,28 @@
+import GoogleMobileAds
 import SwiftUI
 import CoreData
+
+struct AdMobBannerView: UIViewRepresentable {
+
+    func makeUIView(context: Context) -> GADBannerView {
+        let banner = GADBannerView(adSize: GADAdSizeBanner)
+        
+        #if targetEnvironment(simulator)
+            // Simulator
+            banner.adUnitID = "ca-app-pub-3940256099942544/2934735716" // Test ad unit
+        #else
+            // Device
+            banner.adUnitID = "ca-app-pub-4474423965652054/8543378384" // Real Adunit
+        #endif
+
+        banner.rootViewController = UIApplication.shared.windows.first?.rootViewController
+        banner.load(GADRequest())
+        return banner
+    }
+
+    func updateUIView(_ uiView: GADBannerView, context: Context) {}
+
+}
 
 struct HomeScreenView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -105,6 +128,11 @@ struct HomeScreenView: View {
                     .padding(.leading, 30)
                     .padding(.trailing, 30)
                     .padding(.top, heightMultiplier == 1 ? -30 : -40*heightMultiplier)
+                    
+                    // Banner Ad
+                    AdMobBannerView().frame(width: 320, height: 50)
+                        .padding(.leading, 30)
+                        .padding(.trailing, 30)
                     
                 }
             }.navigationBarBackButtonHidden(true)
